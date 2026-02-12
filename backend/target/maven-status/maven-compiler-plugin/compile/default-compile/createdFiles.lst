@@ -1,0 +1,4 @@
+com\kiro\resource\TaskResource.class
+com\kiro\repository\TaskRepository.class
+com\kiro\entity\Task.class
+META-INF\panache-archive.marker

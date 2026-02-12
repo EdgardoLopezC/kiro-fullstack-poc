@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Todo List</h1>
+
+  <div class="task-form">
+    <h2>Nueva Tarea</h2>
+    <input [(ngModel)]="newTask.title" placeholder="Título" class="input-field" />
+    <textarea [(ngModel)]="newTask.description" placeholder="Descripción" class="input-field"></textarea>
+    <button (click)="createTask()" class="btn btn-primary">Agregar Tarea</button>
+  </div>
+
+  <div class="task-list">
+    <h2>Tareas</h2>
+    <div *ngFor="let task of tasks" class="task-item">
+      <div *ngIf="editingTask?.id !== task.id">
+        <input type="checkbox" [checked]="task.completed" (change)="toggleComplete(task)" />
+        <span [class.completed]="task.completed">{{ task.title }}</span>
+        <p>{{ task.description }}</p>
+        <button (click)="editTask(task)" class="btn btn-edit">Editar</button>
+        <button (click)="deleteTask(task.id)" class="btn btn-delete">Eliminar</button>
+      </div>
+
+      <div *ngIf="editingTask?.id === task.id" class="edit-form">
+        <input [(ngModel)]="editingTask.title" class="input-field" />
+        <textarea [(ngModel)]="editingTask.description" class="input-field"></textarea>
+        <button (click)="updateTask()" class="btn btn-primary">Guardar</button>
+        <button (click)="cancelEdit()" class="btn btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
