@@ -20,8 +20,8 @@
       </div>
 
       <div *ngIf="editingTask?.id === task.id" class="edit-form">
-        <input [(ngModel)]="editingTask.title" class="input-field" />
-        <textarea [(ngModel)]="editingTask.description" class="input-field"></textarea>
+        <input [(ngModel)]="editingTask!.title" class="input-field" />
+        <textarea [(ngModel)]="editingTask!.description" class="input-field"></textarea>
         <button (click)="updateTask()" class="btn btn-primary">Guardar</button>
         <button (click)="cancelEdit()" class="btn btn-secondary">Cancelar</button>
       </div>
