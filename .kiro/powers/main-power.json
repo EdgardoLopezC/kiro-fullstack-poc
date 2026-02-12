@@ -1,0 +1,17 @@
+{
+  "name": "PruebaFullstack",
+  "version": "1.0.0",
+  "description": "Power para gestionar Angular, Quarkus y Git",
+  "steeringFiles": ["../steering/rules.md"],
+  "tools": [
+    "git_tool",
+    "terminal",
+    "file_system_tool"
+  ],
+  "skills": [
+    {
+      "name": "backend-patterns",
+      "path": "../skills/backend-patterns" 
+    }
+  ]
+}
